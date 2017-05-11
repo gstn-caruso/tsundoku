@@ -8,9 +8,12 @@ image: "ruby:2.4.1"
 # Check out: http://docs.gitlab.com/ce/ci/docker/using_docker_images.html#what-is-service
 services:
   - postgres:9.6.2
+  
 
 variables:
-  POSTGRES_DB: tsundoku_test
+  POSTGRES_DB: grupal-tsundoku_test
+  POSTGRES_USER: runner
+  POSTGRES_PASSWORD: ""
 
 # Cache gems in between builds
 cache:
@@ -24,6 +27,7 @@ before_script:
   # Uncomment next line if your rails app needs a JS runtime:
   # - apt-get update -q && apt-get install nodejs -yqq
   - gem install bundler  --no-ri --no-rdoc    # Bundler is not installed with the image
+  - cp config/database.yml.gitlab config/database.yml
   - bundle install -j $(nproc) --path vendor  # Install dependencies into ./vendor/ruby
 
 # Optional - Delete if not using `rubocop`
