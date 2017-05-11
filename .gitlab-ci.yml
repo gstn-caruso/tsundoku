@@ -27,17 +27,12 @@ before_script:
   # Uncomment next line if your rails app needs a JS runtime:
   - apt-get update -q && apt-get install nodejs -yqq
   - gem install bundler  --no-ri --no-rdoc    # Bundler is not installed with the image
-  - gem install rubocop
   - cp config/database.yml.gitlab config/database.yml
   - bundle install -j $(nproc) --path vendor  # Install dependencies into ./vendor/ruby
 
-# Optional - Delete if not using `rubocop`
-rubocop:
-  script:
-  - rubocop
-
 rspec:
   script:
+  - RAILS_ENV=test bundle exec rake db:create db:migrate
   - rspec spec
 
 rails:
@@ -46,13 +41,12 @@ rails:
   script:
   - bundle exec rake db:migrate
   - bundle exec rake db:seed
-  - bundle exec rake test
 
 # This deploy job uses a simple deploy flow to Heroku, other providers, e.g. AWS Elastic Beanstalk
 # are supported too: https://github.com/travis-ci/dpl
-deploy:
-  type: deploy
-  environment: production
-  script:
-  - gem install dpl
-  - dpl --provider=heroku --app=$HEROKU_APP_NAME --api-key=$HEROKU_PRODUCTION_KEY
+#deploy:
+#  type: deploy
+#  environment: production
+#  script:
+#  - gem install dpl
+#  - dpl --provider=heroku --app=$HEROKU_APP_NAME --api-key=$HEROKU_PRODUCTION_KEY
