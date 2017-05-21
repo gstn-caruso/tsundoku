@@ -35,3 +35,11 @@ rspec:
   script:
   - RAILS_ENV=test bundle exec rake db:create db:migrate
   - rspec spec
+
+production:
+  type: deploy
+  script:
+  - gem install dpl
+  - dpl --provider=heroku --app=gitlab-ci-ruby-test-prod --api-key=$HEROKU_PRODUCTION_API_KEY
+  only:
+  - master
