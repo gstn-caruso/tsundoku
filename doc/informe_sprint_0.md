@@ -10,4 +10,22 @@ El mayor problema que tuvimos fue configurar la conexion con PostgreSQL.
 
 ## Mini Retro
 
+### Nos gusto:
+
+- Story Mapping fisico.
+- Descubrir que Gitlab tiene CI propio.
+- Setup del proyecto y equipo.
+
+### No nos gusto:
+
+- Falta de planificacion de las tareas del Sprint.
+- Falta de seguimiento de la reunion del lunes 15.
+- Poco coding.
+- No haber podido contar con una herramienta para compartir el Story Mapping.
+
+### Action Items:
+
+- Armar el plan de Sprint 1.
+- Asignar las tareas del Sprint.
+
 ## Plan Siguiente Sprint
