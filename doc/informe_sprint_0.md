@@ -29,3 +29,8 @@ El mayor problema que tuvimos fue configurar la conexion con PostgreSQL.
 - Asignar las tareas del Sprint.
 
 ## Plan Siguiente Sprint
+- Setup frontend de la cámara integrando las librerías de AR
+- Como publicador de contenido quiero poder subir imagenes
+    - Spike: investigar cómo subir imágenes
+    - Hacer un formulario para subir imágenes
+- Como publicador de contenido quiero poder obtener un codigo AR por cada imagen que subo
