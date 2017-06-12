@@ -23,5 +23,9 @@
 /db/schema.rb
 /public/uploads
 
+<<<<<<< HEAD
 .project
 .ruby-version
+=======
+.project
+>>>>>>> 2489dc539a229b92e0a9e66cddf1f56680cba0b4
