@@ -21,3 +21,4 @@
 .idea/
 /config/database.yml
 /db/schema.rb
+/public/uploads
