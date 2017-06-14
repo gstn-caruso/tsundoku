@@ -11,14 +11,14 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>Download Link</th>
-      <th>&nbsp;</th>
+      <th>Thumbnail</th>
     </tr>
   </thead>
   <tbody>
     <% @images.each do |image| %>
       <tr>
         <td><%= image.name %></td>
+        <td><%= image_tag image.image_url, width: '20%' %></td>
       </tr>
     <% end %>
   </tbody>
