@@ -1,0 +1,14 @@
+<% unless @image.errors.empty? %>
+    <div class="alert alert-error">
+      <ul>
+        <% @image.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+<% end %>
+
+<%= image_tag @image.image_url %>
+<%= root_url + @image.image_url %>
+
+<p> <%= link_to 'Back', images_path %> </p>

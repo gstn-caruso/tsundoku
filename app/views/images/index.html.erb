@@ -19,6 +19,7 @@
       <tr>
         <td><%= image.name %></td>
         <td><%= image_tag image.image_url, width: '20%' %></td>
+        <td><%= link_to 'Show URL', image_path(id: image.id, url: image.image_url) %></td>
       </tr>
     <% end %>
   </tbody>

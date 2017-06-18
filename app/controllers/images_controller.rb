@@ -7,6 +7,10 @@ class ImagesController < ApplicationController
   def new
     @image = Image.new
   end
+
+  def show
+    @image = Image.find params[:id]
+  end
   
   def create
     @image = Image.new image_params
