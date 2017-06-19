@@ -5,10 +5,6 @@ class WelcomeController < ApplicationController
 
   private
 
-  def welcome_params
-    params.require(:image_id)
-  end
-
   def find_image_from_url
     Image.find(params[:image_id])
   rescue ActiveRecord::RecordNotFound
