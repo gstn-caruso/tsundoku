@@ -3,10 +3,16 @@ require 'rails_helper'
 describe WelcomeController, type: :controller do
 
   # TODO: Replace this with FactoryGirl
+  PATH_TO_IMAGE = "#{Rails.root}/spec/fixtures/files/sapo.jpg".freeze
+
   before do
-    Image.create!(name: 'example_image',
-                  image: File.open("#{Rails.root}/spec/fixtures/files/sapo.jpg"))
+    IO.write(PATH_TO_IMAGE, '')
+    image = File.open(PATH_TO_IMAGE)
+
+    Image.create!(name: 'example_image', image: image)
   end
+
+  after { File.delete(PATH_TO_IMAGE) if File.exist?(PATH_TO_IMAGE) }
 
   describe 'GET #index' do
     it('when an image id is passed returns http success') do
