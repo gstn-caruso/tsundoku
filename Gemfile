@@ -59,3 +59,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Image upload
 gem 'carrierwave', '~> 1.1.0'
+gem 'cloudinary'
+
