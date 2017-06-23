@@ -1,3 +1,49 @@
 // Place all the styles related to the Images controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.image-gallery {
+  margin: 2em;
+
+  table {
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+    margin-bottom: 40px;
+  }
+
+  table, th, td {
+    border: 1px solid #ddd;
+  }
+
+  tr {
+    height: 150px;
+
+    img{
+      max-height: 140px;
+      border-radius: 5px;
+    }
+  }
+  tr:nth-child(even){background-color: #f2f2f2;}
+}
+
+.btn {
+  color: white;
+  background-color: #1d81ff;
+  line-height: 40px;
+  text-decoration: none;
+  border-radius: 7px;
+}
+
+.btn:hover{
+    background-color: #1354a8;
+    transition: background-color 0.3s ease;
+
+}
+
+.center{
+  display: block;
+  text-align: center;
+  margin-left: 40%;
+  margin-right: 40%
+}
