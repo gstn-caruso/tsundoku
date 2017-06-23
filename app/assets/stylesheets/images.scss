@@ -53,6 +53,7 @@
 .btn:hover{
     background-color: #1354a8;
     transition: background-color 0.3s ease;
+    cursor: pointer;
 
 }
 
@@ -83,6 +84,10 @@
       margin-bottom: 5em;
       box-sizing: border-box;
       font-size: 20px;
+    }
+
+    input[type=submit]{
+      font-size: initial;
     }
   }
 
