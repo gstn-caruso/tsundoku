@@ -1,3 +1,7 @@
+## Cómo se usa
+* Tenemos la aplicación hosteada en Heroku, pueden acceder desde https://tsundoku-ar.herokuapp.com
+* Para poder gestionar el contenido (por ahora sólo imágenes), debe acceder a https://tsundoku-ar.herokuapp.com/images
+
 ## Cómo configurar el entorno de desarrollo
 ### Clonar el proyecto
 Lo primero que debemos hacer es `git clone git@gitlab.com:unq-tpi-eis-alumnos-2017-s1/grupal-tsundoku.git`
