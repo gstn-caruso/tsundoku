@@ -4,3 +4,16 @@
 //= require aframe.min
 //= require aframe-ar.min
 //= require three.min
+//= require html5-qrcode.min
+
+$(document).ready(function () {
+    $('#reader').html5_qrcode(function(data){
+            alert(data)
+        },
+        function(error){
+            console.log(error)
+        }, function(videoError){
+            console.log(videoError)
+        }
+    );
+});
