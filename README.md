@@ -1,6 +1,8 @@
 ## Cómo se usa
 * Tenemos la aplicación hosteada en Heroku, pueden acceder desde https://tsundoku-ar.herokuapp.com
 * Para poder gestionar el contenido (por ahora sólo imágenes), debe acceder a https://tsundoku-ar.herokuapp.com/images
+* Para poder ver una imagen en particular, debe ingresar a https://tsundoku-ar.herokuapp.com/welcome/index/ID-DE-LA-IMAGEN y luego apuntar a un marcador HIRO desde el dispositivo donde abrió la aplicación
+* Si simplemente ingresa a la ruta principal, la aplicación mostrará la primer imagen que encuentre.
 
 ## Cómo configurar el entorno de desarrollo
 ### Clonar el proyecto
