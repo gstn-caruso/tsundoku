@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: djlqnfa22
+  api_key: '968673649153668'
+  api_secret: qFpd5YBTUQeRl_YghFwy30l4w6w
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: djlqnfa22
+  api_key: '968673649153668'
+  api_secret: qFpd5YBTUQeRl_YghFwy30l4w6w
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: djlqnfa22
+  api_key: '968673649153668'
+  api_secret: qFpd5YBTUQeRl_YghFwy30l4w6w
+  enhance_image_tag: true
+  static_image_support: false
