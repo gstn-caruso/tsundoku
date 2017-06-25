@@ -1,5 +1,13 @@
+<% unless flash[:notice].blank? %>
+      <div class="alert alert-info">
+      <%= flash[:notice] %>
+    </div>
+<% end %>
+
 <div class="image-gallery">
-  <%= image_tag @qr_url%>
+  <div class="center">
+    <%= image_tag @qr_url%>
+  </div>
 </div>
 
 <%= link_to 'Back', images_path, class: 'btn center' %>
