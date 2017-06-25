@@ -16,13 +16,12 @@ class ImagesController < ApplicationController
   
   def create
     @image = Image.new image_params
-    image_id = @image.id.to_s
 
     if @image.save
-      image_path = "public/qr_codes/#{image_id}.png"
-      Qr4r::encode(image_id, image_path, pixel_size: 10)
+      image_path = "public/qr_codes/#{@image.id}.png"
+      Qr4r::encode(@image.id.to_s, image_path, pixel_size: 10)
 
-      redirect_to "/qr/#{image_id}", notice: SAVE_QR_REMINDER
+      redirect_to "/qr/#{@image.id}", notice: SAVE_QR_REMINDER
     else
       render :new
     end
