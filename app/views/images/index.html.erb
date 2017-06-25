@@ -5,6 +5,8 @@
 <% end %>
 
 <div class="image-gallery">
+  <%= link_to 'New Image', new_image_path, class: 'center btn' %>
+
   <table>
       <% @images.each do |image| %>
         <tr>
@@ -15,5 +17,4 @@
         </tr>
       <% end %>
   </table>
-  <%= link_to 'New Image', new_image_path, class: 'center btn' %>
 </div>
