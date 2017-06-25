@@ -1,5 +1,7 @@
 class ImagesController < ApplicationController
-  
+
+  SAVE_QR_REMINDER = 'Print the qr code or download it to use it later'
+
   def index
     @images = Image.all
   end
@@ -14,16 +16,25 @@ class ImagesController < ApplicationController
   
   def create
     @image = Image.new image_params
-    
+    image_id = @image.id.to_s
+
     if @image.save
-      redirect_to images_path, notice: "The image #{@image.name} was uploaded correctly"
+      image_path = "public/qr_codes/#{image_id}.png"
+      Qr4r::encode(image_id, image_path, pixel_size: 10)
+
+      redirect_to "/qr/#{image_id}", notice: SAVE_QR_REMINDER
     else
       render :new
     end
   end
 
+  def qr
+    @qr_url = root_url + "qr_codes/#{params[:id]}.png"
+  end
+
   private
-    def image_params
-      params.require(:image).permit(:name, :image)
-    end
+
+  def image_params
+    params.require(:image).permit(:name, :image)
+  end
 end

@@ -12,6 +12,7 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
+!public/qr_codes/.keep
 
 /node_modules
 /yarn-error.log
@@ -22,4 +23,6 @@
 /config/database.yml
 /db/schema.rb
 /public/uploads
+/public/qr_codes
 .project
+
