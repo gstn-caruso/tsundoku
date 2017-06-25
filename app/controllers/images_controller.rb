@@ -1,3 +1,4 @@
+
 class ImagesController < ApplicationController
   
   def index
@@ -16,10 +17,17 @@ class ImagesController < ApplicationController
     @image = Image.new image_params
     
     if @image.save
-      redirect_to images_path, notice: "The image #{@image.name} was uploaded correctly"
+      image_path = "public/uploads/qr_code/#{@image.id}.png"
+      Qr4r::encode(@image.id.to_s, image_path, :pixel_size => 10)
+
+      redirect_to "/qr/#{@image.id.to_s}", notice: 'Print the qr code or download it to use it later'
     else
       render :new
     end
+  end
+
+  def qr
+    @qr_url = root_url + "uploads/qr_code/#{params[:id]}.png"
   end
 
   private
