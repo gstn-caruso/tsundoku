@@ -65,4 +65,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'carrierwave', '~> 1.1.0'
 
 # QR generator
-gem 'rqrcode'
+gem 'qr4r'
