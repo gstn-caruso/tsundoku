@@ -8,9 +8,13 @@
   </div>
 <% end %>
 
-<%= form_for @image, html: { multipart: true } do |f| %>
-  <%= f.text_field :name %>
-  <%= f.label :image %>
-  <%= f.file_field :image %>
-  <%= f.submit 'Save' %>
-<% end %>
+<div class="upload-image">
+  <%= form_for @image, html: { multipart: true } do |f| %>
+    <%= f.text_field :name, placeholder: 'Your image name' %>
+    <%= f.file_field :image %>
+      <div class="with-padding">
+        <%= link_to 'Back', images_path, class: 'btn' %>
+        <%= f.submit 'Submit', class: 'btn' %>
+      </div>
+  <% end %>
+</div>

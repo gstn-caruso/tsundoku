@@ -3,24 +3,18 @@
     <%= flash[:notice] %>
   </div>
 <% end %>
-<br />
-<%= link_to 'New Image', new_image_path %>
-<br />
-<br />
-<table class="table table-bordered table-striped">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Thumbnail</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @images.each do |image| %>
-      <tr>
-        <td><%= image.name %></td>
-        <td><%= image_tag image.image_url, width: '20%' %></td>
-        <td><%= link_to 'Show URL', image_path(id: image.id, url: image.image_url) %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+
+<div class="image-gallery">
+  <%= link_to 'New Image', new_image_path, class: 'center btn' %>
+
+  <table>
+      <% @images.each do |image| %>
+        <tr>
+          <td style="width: 10%"><%= image.id %></td>
+          <td style="width: 20%"><%= image.name %></td>
+          <td><%= image_tag image.image_url %></td>
+          <td style="width: 20%"><%= link_to 'Show URL', image_path(id: image.id, url: image.image_url) %></td>
+        </tr>
+      <% end %>
+  </table>
+</div>

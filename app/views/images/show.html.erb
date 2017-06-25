@@ -8,7 +8,11 @@
     </div>
 <% end %>
 
-<%= image_tag @image.image_url %>
-<%= root_url + @image.image_url %>
+<div class="image-gallery">
+  <ul>
+    <li><%= image_tag @image.image_url %></li>
+    <li><%= link_to 'Image link', (root_url + @image.image_url) %></li>
+  </ul>
+</div>
 
-<p> <%= link_to 'Back', images_path %> </p>
+<%= link_to 'Back', images_path, class: 'btn center' %>
