@@ -1,0 +1,26 @@
+<html>
+  <body class="welcome-page" style="overflow: scroll">
+    <video id="preview"></video>
+  </body>
+</html>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var preview = document.getElementById('preview');
+        if (preview) {
+            var scanner = new Instascan.Scanner({video: preview});
+            scanner.addListener('scan', function (content) {
+                window.location.href = "<%= root_url %>welcome/index/" + content;
+            });
+            Instascan.Camera.getCameras().then(function (cameras) {
+                if (cameras.length > 0) {
+                    scanner.start(cameras[0]);
+                } else {
+                    alert('No cameras found.');
+                }
+            }).catch(function (e) {
+                console.error(e);
+            });
+        }
+    });
+</script>

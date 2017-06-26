@@ -4,3 +4,4 @@
 //= require aframe.min
 //= require aframe-ar.min
 //= require three.min
+//= require instascan.min
