@@ -6,5 +6,8 @@ body {
 }
 
 .welcome-page{
-  overflow: hidden;
+  video{
+    transform: scaleX(-1);
+    height: 100vh;
+  }
 }

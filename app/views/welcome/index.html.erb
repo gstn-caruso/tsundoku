@@ -1,7 +1,7 @@
 <html>
   <head>
   </head>
-  <body class="welcome-page" style="overflow: scroll">
+  <body class="welcome-page">
     <a-scene embedded artoolkit='sourceType: webcam;'>
       <a-image geometry="primitive:box; width:1; height:1; depth:1" src=<%= asset_path @image_url %>></a-image>
       <a-marker-camera preset='hiro'></a-marker-camera>
