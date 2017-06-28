@@ -12,5 +12,9 @@
 4. Subir una imaen obtiene un **Hiro Marker** con el **codigo QR** ,que tiene el id de la imagen, adentro del mismo marker *(SP => 5)*
 
 ###Review
+- Stories 1, 2 y 3 terminadas y deployadas en Heroku.
+- Story 4 se cayo del sprint no llegamos a hacerla.
+- Story points => 13/18
 
 ### Retro
+**Esta iteracion no hicimos retro**
