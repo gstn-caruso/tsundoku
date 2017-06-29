@@ -1,8 +1,8 @@
 <html>
-<body>
+<body onclick="tooglePopUp()">
 <video id="preview" class="qr_video"></video>
 
-<div id="popUp" class="modal" style="display: none">
+<div id="popUp" class="modal">
     <div class="modal-content">
       <div class="modal-title"><span> Please select one of your avilable cameras </span></div>
       <div id="chooseCamera"></div>
@@ -42,11 +42,18 @@
     function userSelectDevise(cameras) {
         devises = cameras;
         var popup = $("#chooseCamera");
+        var cameraName;
+
         for (var i = 0; i < cameras.length; i++) {
-            var deviseText = popUpText.supplant({deviseId: cameras[i].id, deviseName: cameras[i].name});
+            console.log(cameras[i].name);
+            if(cameras[i].name != undefined || cameras[i].name != null){
+                cameraName = cameras[i].name;
+            }else{
+                cameraName = "Camera " + (i + 1);
+            }
+            var deviseText = popUpText.supplant({deviseId: cameras[i].id, deviseName: cameraName});
             popup.append(deviseText);
         }
-        tooglePopUp();
     }
 
     function startScaning(selectedDeviseElement) {
@@ -63,8 +70,6 @@
         }else{
             scanner.start(selectedDevise);
         }
-
-        tooglePopUp();
     }
 
     function tooglePopUp() {
