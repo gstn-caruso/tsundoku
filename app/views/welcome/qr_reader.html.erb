@@ -2,13 +2,18 @@
 <body>
 <video id="preview" class="qr_video"></video>
 
-<div id="chooseCamera" class="popup" onclick="myFunction()" style="display: none" >
+<div id="popUp" class="modal" style="display: none">
+    <div class="modal-content">
+      <div class="modal-title"><span> Please select one of your avilable cameras </span></div>
+      <div id="chooseCamera"></div>
+    </div>
 </div>
+
 </body>
 </html>
 
 <script type="text/javascript">
-    var popUpText = "<div><span id='myPopup' class='popUpText' data-devise={deviseId} onclick='startScaning(this)'>{deviseName}</span><div>";
+    var popUpText = "<div><span id='myPopup' class='modal-text' data-devise={deviseId} onclick='startScaning(this)'>&gt &nbsp {deviseName}</span><div>";
     var scanner;
 
     $(document).ready(function () {
@@ -41,7 +46,7 @@
             var deviseText = popUpText.supplant({deviseId: cameras[i].id, deviseName: cameras[i].name});
             popup.append(deviseText);
         }
-        myFunction();
+        tooglePopUp();
     }
 
     function startScaning(selectedDeviseElement) {
@@ -58,10 +63,12 @@
         }else{
             scanner.start(selectedDevise);
         }
+
+        tooglePopUp();
     }
 
-    function myFunction() {
-        $("#chooseCamera").toggle();
+    function tooglePopUp() {
+        $("#popUp").toggle();
     }
 </script>
 
