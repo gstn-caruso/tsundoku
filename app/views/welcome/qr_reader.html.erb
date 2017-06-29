@@ -1,20 +1,33 @@
 <html>
-  <body class="welcome-page" style="overflow: scroll">
-    <video id="preview"></video>
-  </body>
+<body onclick="tooglePopUp()">
+<video id="preview" class="qr_video"></video>
+
+<div id="popUp" class="modal">
+    <div class="modal-content">
+      <div class="modal-title"><span> Please select one of your avilable cameras </span></div>
+      <div id="chooseCamera"></div>
+    </div>
+</div>
+
+</body>
 </html>
 
 <script type="text/javascript">
+    var popUpText = "<div><span id='myPopup' class='modal-text' data-devise={deviseId} onclick='startScaning(this)'>&gt &nbsp {deviseName}</span><div>";
+    var scanner;
+
     $(document).ready(function () {
         var preview = document.getElementById('preview');
         if (preview) {
-            var scanner = new Instascan.Scanner({video: preview, backgroundScan: false, scanPeriod: 3, mirror: false});
+            scanner = new Instascan.Scanner({video: preview, mirror: false});
+
             scanner.addListener('scan', function (content) {
                 window.location.href = "<%= root_url %>welcome/index/" + content;
             });
+
             Instascan.Camera.getCameras().then(function (cameras) {
                 if (cameras.length > 0) {
-                    scanner.start(cameras.pop());
+                    userSelectDevise(cameras);
                 } else {
                     alert('No cameras found.');
                 }
@@ -23,4 +36,44 @@
             });
         }
     });
+
+    var devises;
+
+    function userSelectDevise(cameras) {
+        devises = cameras;
+        var popup = $("#chooseCamera");
+        var cameraName;
+
+        for (var i = 0; i < cameras.length; i++) {
+            console.log(cameras[i].name);
+            if(cameras[i].name != undefined || cameras[i].name != null){
+                cameraName = cameras[i].name;
+            }else{
+                cameraName = "Camera " + (i + 1);
+            }
+            var deviseText = popUpText.supplant({deviseId: cameras[i].id, deviseName: cameraName});
+            popup.append(deviseText);
+        }
+    }
+
+    function startScaning(selectedDeviseElement) {
+        var selectedDeviseId = selectedDeviseElement.dataset.devise;
+        var selectedDevise;
+        for(var i = 0; i < devises.length; i++){
+            if(devises[i].id == selectedDeviseId){
+                selectedDevise = devises[i];
+            }
+        }
+
+        if(selectedDevise == undefined || selectedDevise == null){
+            alert("Fatal error finding camera, please reload the app");
+        }else{
+            scanner.start(selectedDevise);
+        }
+    }
+
+    function tooglePopUp() {
+        $("#popUp").toggle();
+    }
 </script>
+
