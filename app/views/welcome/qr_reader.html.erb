@@ -8,13 +8,13 @@
     $(document).ready(function () {
         var preview = document.getElementById('preview');
         if (preview) {
-            var scanner = new Instascan.Scanner({video: preview});
+            var scanner = new Instascan.Scanner({video: preview, backgroundScan: false, scanPeriod: 3, mirror: false});
             scanner.addListener('scan', function (content) {
                 window.location.href = "<%= root_url %>welcome/index/" + content;
             });
             Instascan.Camera.getCameras().then(function (cameras) {
                 if (cameras.length > 0) {
-                    scanner.start(cameras[0]);
+                    scanner.start(cameras.pop());
                 } else {
                     alert('No cameras found.');
                 }
