@@ -21,7 +21,6 @@
 
 .idea/
 /config/database.yml
-/db/schema.rb
 /public/uploads
 /public/qr_codes
 .project
