@@ -1,15 +1,13 @@
 <html>
-<body onclick="tooglePopUp()">
-<video id="preview" class="qr_video"></video>
-
-<div id="popUp" class="modal">
-    <div class="modal-content">
-      <div class="modal-title"><span> Please select one of your avilable cameras </span></div>
-      <div id="chooseCamera"></div>
+  <body>
+    <video id="preview" class="qr_video"></video>
+    <div id="popUp" class="modal">
+      <div class="modal-content">
+        <div class="modal-title"><span> Select one of your available cameras and point to a Tsundoku QR code</span></div>
+        <div id="chooseCamera" onclick="tooglePopUp()"></div>
+      </div>
     </div>
-</div>
-
-</body>
+  </body>
 </html>
 
 <script type="text/javascript">

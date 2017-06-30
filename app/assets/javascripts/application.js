@@ -12,7 +12,7 @@
 //
 //= require rails-ujs
 //= require turbolinks
-//= require jquery.min.js
+//= require jquery
 //= require_tree .
 
 String.prototype.supplant = function (o) {
