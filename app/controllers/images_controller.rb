@@ -18,7 +18,7 @@ class ImagesController < ApplicationController
     @image = Image.new image_params
 
     if @image.save
-      redirect_to ar_code_path(:id, @image.id), notice: SAVE_QR_REMINDER
+      redirect_to ar_code_path(id: @image.id), notice: SAVE_QR_REMINDER
     else
       render :new
     end
