@@ -5,6 +5,10 @@ body {
   margin: 0;
 }
 
+.hiro-scene{
+  overflow: hidden;
+}
+
 .welcome-page{
   video{
     width: 100vw;
@@ -48,6 +52,7 @@ body {
 }
 
 .modal-text {
+  text-decoration: none;
   border-width: 2px;
   text-align: left;
   margin-top: 10px;

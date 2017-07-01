@@ -4,14 +4,18 @@
     </div>
 <% end %>
 
+<%= render 'shared/navbar' %>
+
 <div class="image-gallery">
-  <div class="ar-qr-image center">
+  <div class="ar-qr-image">
     <%= image_tag @ar_url%>
   </div>
-  <div>
-    <%= link_to 'Back', images_path, class: 'btn center' %>
-    <%= link_to 'Download', {:action => :download, :image_id =>@id}, class: 'btn center'%>
-    <button class="btn center" onclick="setClipboardText()">Copy lynk</button>
+    <div class="button-container">
+      <%= link_to 'Download', {:action => :download, :image_id =>@id}, class: 'button-left btn'%>
+      <button class="btn button-center" onclick="setClipboardText()">Copy link to clipboard</button>
+    </div>
+  <div class="button-container">
+    <%= link_to 'Back', images_path, class: 'btn button-left' %>
   </div>
 </div>
 
