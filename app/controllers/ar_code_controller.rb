@@ -3,13 +3,13 @@ class ArCodeController < ApplicationController
   QR_IMAGE_PATH = 'public/qr_codes/'
 
   def show
-    id = params[:id]
-    unless Image.exists? id
+    @id = params[:id]
+    unless Image.exists? @id
       redirect_to images_path, error: IMAGE_NOT_EXISTS
     end
-    generate_qr_ar_image(id)
+    generate_qr_ar_image(@id)
 
-    @ar_url = root_url + "qr_codes/hiro#{id}.png"
+    @ar_url = root_url + "qr_codes/hiro#{@id}.png"
   end
 
   def generate_qr_ar_image(image_id)
@@ -26,6 +26,10 @@ class ArCodeController < ApplicationController
     big_image.push(image_row.append(false))
 
     big_image.append(true).write("public/qr_codes/hiro#{image_id}.png")
+  end
+
+  def download
+    send_file (QR_IMAGE_PATH + 'hiro' + params[:image_id] + '.png')
   end
 
 end

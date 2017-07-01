@@ -1,3 +1,26 @@
 // Place all the styles related to the ARCode controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.button-center {
+  float: none;
+  width: 130px;
+}
+.button-right {
+  float: right;
+  width: 130px;
+}
+
+.button-left {
+  float: left;
+  width: 130px;
+}
+
+.button-container {
+  width:500px;
+  margin: auto;
+}
+
+.ar-qr-image img {
+  width:150%;
+  height: auto;
+}
