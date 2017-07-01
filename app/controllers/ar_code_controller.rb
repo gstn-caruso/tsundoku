@@ -14,13 +14,13 @@ class ArCodeController < ApplicationController
 
   def generate_qr_ar_image(image_id)
     image_path = "#{QR_IMAGE_PATH + image_id}.png"
-    Qr4r::encode(@image.id.to_s, image_path, pixel_size: 20)
+    Qr4r::encode(image_id, image_path, pixel_size: 20)
 
     #this will be the final image
     big_image = Magick::ImageList.new
 
     image_row = Magick::ImageList.new
-    image_row.push(Magick::Image.read("#{QR_IMAGE_PATH + @image.id}.png").first)
+    image_row.push(Magick::Image.read("#{QR_IMAGE_PATH + image_id}.png").first)
     image_row.push(Magick::Image.read('app/assets/images/hiro.png').first)
 
     big_image.push(image_row.append(false))
