@@ -1,3 +1,5 @@
+require 'rmagick'
+
 class ImagesController < ApplicationController
 
   SAVE_QR_REMINDER = 'Print the ar code or download it to use it later'
@@ -22,6 +24,10 @@ class ImagesController < ApplicationController
     else
       render :new
     end
+  end
+
+  def qr
+    @qr_url = root_url + "qr_codes/hiro#{params[:id]}.png"
   end
 
   private

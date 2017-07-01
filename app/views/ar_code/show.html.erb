@@ -5,9 +5,9 @@
 <% end %>
 
 <div class="image-gallery">
-  <div class="center">
+  <div class="ar-qr-image center">
     <%= image_tag @ar_url%>
   </div>
+  <%= link_to 'Back', images_path, class: 'btn center' %>
 </div>
 
-<%= link_to 'Back', images_path, class: 'btn center' %>

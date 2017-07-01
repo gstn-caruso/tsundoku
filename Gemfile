@@ -66,3 +66,6 @@ gem 'carrierwave', '~> 1.1.0'
 
 # QR generator
 gem 'qr4r'
+
+# Image dition
+gem 'rmagick'
