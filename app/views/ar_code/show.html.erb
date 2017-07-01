@@ -1,12 +1,17 @@
 <% unless flash[:notice].blank? %>
-      <div class="alert alert-info">
+    <div class="alert alert-info">
       <%= flash[:notice] %>
     </div>
 <% end %>
 
 <div class="image-gallery">
+<<<<<<< HEAD:app/views/images/qr.html.erb
   <div class="ar-qr-image center">
     <%= image_tag @qr_url%>
+=======
+  <div class="center">
+    <%= image_tag @ar_url%>
+>>>>>>> 71ab3ca90c3ead9aef3027e58275cbc85a5cb545:app/views/ar_code/show.html.erb
   </div>
   <%= link_to 'Back', images_path, class: 'btn center' %>
 </div>
