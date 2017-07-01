@@ -9,7 +9,7 @@ class ArCodeController < ApplicationController
     end
     generate_qr_ar_image(id)
 
-    @ar_url = root_url + "qr_codes/#{id}.png"
+    @ar_url = root_url + "qr_codes/hiro#{id}.png"
   end
 
   def generate_qr_ar_image(image_id)
