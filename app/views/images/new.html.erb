@@ -8,6 +8,8 @@
   </div>
 <% end %>
 
+<%= render 'shared/navbar' %>
+
 <div class="upload-image">
   <%= form_for @image, html: { multipart: true } do |f| %>
     <%= f.text_field :name, placeholder: 'Your image name' %>
