@@ -10,12 +10,13 @@
   <div class="ar-qr-image">
     <%= image_tag @ar_url%>
   </div>
-    <div class="button-container">
-      <%= link_to 'Download', {:action => :download, :image_id =>@id}, class: 'button-left btn'%>
-      <button class="btn button-center" onclick="setClipboardText()">Copy link to clipboard</button>
-    </div>
+  <div class="input-group">
+    <%= text_field_tag 'ar url', @ar_url %>
+    <button onclick="setClipboardText()">Copy link to clipboard</button>
+  </div>
   <div class="button-container">
-    <%= link_to 'Back', images_path, class: 'btn button-left' %>
+      <%= link_to 'Download', {:action => :download, :image_id =>@id}, class: 'button-left btn'%>
+    <%= link_to 'Back', images_path, class: 'btn button-right' %>
   </div>
 </div>
 
