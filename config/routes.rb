@@ -1,13 +1,14 @@
+# For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
 Rails.application.routes.draw do
-  get 'welcome/index/:image_id' => 'welcome#index'
-  get 'qr_reader' => 'welcome#qr_reader'
-  root 'welcome#qr_reader'
+  root 'hiro#qr_reader'
+
+  get 'hiro/index/:image_id' => 'hiro#index'
+  get 'qr_reader' => 'hiro#qr_reader'
 
   resources :images, only: %i[index create new show]
-  get 'images', to: :index, controller: 'images'
+  get 'images/:image_id' => 'images#show', as: 'show_image'
 
-  resources :ar_code, only: %i[new show]
-  get 'ar_code', to: :show, controller: 'ar_code'
-  get 'download/:image_id' => 'ar_code#download'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :qr, only: %i[new show]
+  get 'download/:image_id' => 'qr#download'
 end

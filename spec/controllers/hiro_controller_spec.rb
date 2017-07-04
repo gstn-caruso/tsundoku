@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe WelcomeController, type: :controller do
+describe HiroController, type: :controller do
 
   # TODO: Replace this with FactoryGirl
   PATH_TO_IMAGE = "#{Rails.root}/spec/fixtures/files/sapo.jpg".freeze
