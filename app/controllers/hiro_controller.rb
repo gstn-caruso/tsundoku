@@ -1,4 +1,4 @@
-class WelcomeController < ApplicationController
+class HiroController < ApplicationController
   def index
     @image_url = find_image_from_url.image_url
   end

@@ -4,11 +4,8 @@ class QrController < ApplicationController
 
   def show
     @id = params[:id]
-    unless Image.exists? @id
-      redirect_to images_path, error: IMAGE_NOT_EXISTS
-    end
+    redirect_to images_path, error: IMAGE_NOT_EXISTS unless Image.exists?(@id)
     generate_qr_ar_image(@id)
-
     @ar_url = root_url + "qr_codes/hiro#{@id}.png"
   end
 
@@ -29,7 +26,6 @@ class QrController < ApplicationController
   end
 
   def download
-    send_file (QR_IMAGE_PATH + 'hiro' + params[:image_id] + '.png')
+    send_file(QR_IMAGE_PATH + 'hiro' + params[:image_id] + '.png')
   end
-
 end

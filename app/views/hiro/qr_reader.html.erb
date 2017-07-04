@@ -24,7 +24,7 @@
             scanner = new Instascan.Scanner({video: preview, mirror: false});
 
             scanner.addListener('scan', function (content) {
-                window.location.href = "<%= root_url %>welcome/index/" + content;
+                window.location.href = "<%= root_url %>hiro/index/" + content;
             });
 
             Instascan.Camera.getCameras().then(function (cameras) {

@@ -15,7 +15,7 @@
           <td style="width: 10%"><%= image.id %></td>
           <td style="width: 20%"><%= image.name %></td>
           <td><%= image_tag image.image_url %></td>
-          <td style="width: 20%"><%= link_to 'Show URL', image_path(id: image.id, url: image.image_url) %></td>
+          <td style="width: 20%"><%= link_to 'Show URL', image_path(id: image.id) %></td>
           <td style="width: 20%"><%= link_to 'Show QR', controller: 'qr', action: 'show', :id => image.id %></td>
         </tr>
       <% end %>
