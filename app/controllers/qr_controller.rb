@@ -1,4 +1,4 @@
-class ArCodeController < ApplicationController
+class QrController < ApplicationController
   IMAGE_NOT_EXISTS = 'You are trying to encode a not existing image'
   QR_IMAGE_PATH = 'public/qr_codes/'
 

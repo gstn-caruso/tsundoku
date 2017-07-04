@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :images, only: %i[index create new show]
   get 'images', to: :index, controller: 'images'
 
-  resources :ar_code, only: %i[new show]
+  resources :qr, only: %i[new show]
   get 'ar_code', to: :show, controller: 'ar_code'
   get 'download/:image_id' => 'ar_code#download'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
