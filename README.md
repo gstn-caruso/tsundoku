@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/gstn-caruso/tsundoku.svg?branch=master)](https://travis-ci.org/gstn-caruso/tsundoku)
+
 ## Cómo se usa
 * Tenemos la aplicación hosteada en Heroku, pueden acceder desde https://tsundoku-ar.herokuapp.com
 * Para poder gestionar el contenido (por ahora sólo imágenes), debe acceder a https://tsundoku-ar.herokuapp.com/images
