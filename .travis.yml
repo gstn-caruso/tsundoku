@@ -1,0 +1,7 @@
+language: ruby
+services:
+  - postgresql
+before_script:
+  - cp config/database.yml.gitlab config/database.yml
+  - psql -c 'create database tsundoku_test;' -U postgres
+  - bundle exec rake db:migrate

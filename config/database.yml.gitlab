@@ -9,11 +9,11 @@ default: &default
 
 development:
   <<: *default
-  database: grupal-tsundoku_development
+  database: tsundoku_development
 
 test:
   <<: *default
-  database: grupal-tsundoku_test
+  database: tsundoku_test
 
 production:
   <<: *default
